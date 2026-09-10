@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
   <meta name="robots" content="index, follow">
 
   <style>
+
     :root {
       --text: #161616;
       --muted: #666;
@@ -24,6 +26,10 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -146,6 +152,8 @@
       color: var(--muted);
     }
 
+    /* JOURNEY */
+
     .journey {
       margin-top: 48px;
       display: grid;
@@ -180,6 +188,8 @@
       font-size: 14px;
       color: var(--muted);
     }
+
+    /* CASE STUDIES */
 
     .cards {
       display: grid;
@@ -223,21 +233,60 @@
       font-size: 15px;
     }
 
+    /* EVIDENCE */
+
     .evidence {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      padding: 25px 0;
+      padding: 30px 0;
       border-bottom: 1px solid var(--line);
-      gap: 30px;
+      gap: 40px;
     }
 
     .evidence-source {
       font-weight: 650;
+      font-size: 16px;
+    }
+
+    .evidence-meta {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #999;
     }
 
     .evidence-desc {
       color: var(--muted);
+      font-size: 16px;
     }
+
+    .evidence-desc strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .evidence-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .source-link {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+    }
+
+    .source-link.secondary {
+      color: var(--muted);
+    }
+
+    /* ARTICLE */
 
     .article {
       background: var(--soft);
@@ -279,6 +328,7 @@
     }
 
     @media (max-width: 800px) {
+
       .nav-links {
         display: none;
       }
@@ -303,10 +353,15 @@
 
       .evidence {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 8px;
       }
+
     }
+
   </style>
+
+
+  <!-- Structured Person Data -->
 
   <script type="application/ld+json">
   {
@@ -320,6 +375,7 @@
       "XiaoLiang Li",
       "Johnny Li"
     ],
+    "url": "https://johnnyxiaoliangli.github.io/",
     "jobTitle": "Automotive Digital & AI Transformation Executive",
     "knowsAbout": [
       "Enterprise AI",
@@ -328,18 +384,26 @@
       "Digital Product",
       "Enterprise IT",
       "Cloud Transformation",
+      "Smart Manufacturing",
       "AI Engineering Productivity"
     ]
   }
   </script>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+  <!-- NAVIGATION -->
+
   <nav>
-    <div class="brand">Johnny Xiaoliang Li</div>
+
+    <div class="brand">
+      Johnny Xiaoliang Li
+    </div>
 
     <div class="nav-links">
       <a href="#about">About</a>
@@ -347,12 +411,19 @@
       <a href="#evidence">Evidence</a>
       <a href="#insights">Insights</a>
     </div>
+
   </nav>
+
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero" style="border-top:0;">
-      <div class="eyebrow">Digital · Technology · Enterprise AI</div>
+
+      <div class="eyebrow">
+        Digital · Technology · Enterprise AI
+      </div>
 
       <h1>
         Johnny Xiaoliang Li
@@ -368,13 +439,21 @@
         smart manufacturing, cloud-native digital platforms,
         digital product leadership and enterprise AI adoption.
       </div>
+
     </section>
 
 
-    <section id="about">
-      <div class="section-label">About</div>
+    <!-- ABOUT -->
 
-      <h2>From enterprise IT to enterprise AI.</h2>
+    <section id="about">
+
+      <div class="section-label">
+        About
+      </div>
+
+      <h2>
+        From enterprise IT to enterprise AI.
+      </h2>
 
       <p class="intro">
         My career has followed the evolution of enterprise technology itself:
@@ -384,146 +463,399 @@
         products, operating models and business outcomes.
       </p>
 
+
       <div class="journey">
 
         <div class="journey-item">
-          <div class="journey-num">01</div>
-          <div class="journey-title">Enterprise IT</div>
+
+          <div class="journey-num">
+            01
+          </div>
+
+          <div class="journey-title">
+            Enterprise IT
+          </div>
+
           <div class="journey-text">
             Enterprise systems, process integration and automotive IT foundations.
           </div>
+
         </div>
 
+
         <div class="journey-item">
-          <div class="journey-num">02</div>
-          <div class="journey-title">Digital Transformation</div>
+
+          <div class="journey-num">
+            02
+          </div>
+
+          <div class="journey-title">
+            Digital Transformation
+          </div>
+
           <div class="journey-text">
             C2B transformation, digital customer experience and smart manufacturing.
           </div>
+
         </div>
 
+
         <div class="journey-item">
-          <div class="journey-num">03</div>
-          <div class="journey-title">Cloud-native Enterprise</div>
+
+          <div class="journey-num">
+            03
+          </div>
+
+          <div class="journey-title">
+            Cloud-native Enterprise
+          </div>
+
           <div class="journey-text">
             0→1 digital platforms, cloud digital core and digital product leadership.
           </div>
+
         </div>
 
+
         <div class="journey-item">
-          <div class="journey-num">04</div>
-          <div class="journey-title">Enterprise AI</div>
+
+          <div class="journey-num">
+            04
+          </div>
+
+          <div class="journey-title">
+            Enterprise AI
+          </div>
+
           <div class="journey-text">
             AI engineering productivity, enterprise agents and AI transformation.
           </div>
+
         </div>
 
       </div>
+
     </section>
 
 
-    <section id="cases">
-      <div class="section-label">Selected Case Studies</div>
+    <!-- CASE STUDIES -->
 
-      <h2>Transformation across technology generations.</h2>
+    <section id="cases">
+
+      <div class="section-label">
+        Selected Case Studies
+      </div>
+
+      <h2>
+        Transformation across technology generations.
+      </h2>
+
 
       <div class="cards">
 
         <div class="card">
-          <div class="card-tag">SAIC Maxus</div>
-          <h3>C2B Digital Transformation</h3>
+
+          <div class="card-tag">
+            SAIC Maxus
+          </div>
+
+          <h3>
+            C2B Digital Transformation
+          </h3>
+
           <p>
             Digital transformation across customer engagement,
             intelligent configuration, data platforms and smart manufacturing.
           </p>
+
         </div>
 
+
         <div class="card">
-          <div class="card-tag">Rising Auto</div>
-          <h3>0→1 Digital Enterprise</h3>
+
+          <div class="card-tag">
+            Rising Auto
+          </div>
+
+          <h3>
+            0→1 Digital Enterprise
+          </h3>
+
           <p>
             Building a cloud-based digital core and connecting business,
             finance, supply chain and enterprise operations.
           </p>
+
         </div>
 
+
         <div class="card">
-          <div class="card-tag">Enterprise AI</div>
-          <h3>AI as Enterprise Productivity</h3>
+
+          <div class="card-tag">
+            Enterprise AI
+          </div>
+
+          <h3>
+            AI as Enterprise Productivity
+          </h3>
+
           <p>
             Exploring measurable AI adoption through engineering productivity,
             quality, code contribution and enterprise agents.
           </p>
+
         </div>
 
       </div>
+
     </section>
 
 
-    <section id="evidence">
-      <div class="section-label">Independent Public Evidence</div>
+    <!-- EVIDENCE -->
 
-      <h2>Professional claims should be verifiable.</h2>
+    <section id="evidence">
+
+      <div class="section-label">
+        Independent Public Evidence
+      </div>
+
+      <h2>
+        Professional claims should be verifiable.
+      </h2>
 
       <p class="intro">
         Selected third-party public records documenting my participation
-        in automotive digital transformation, technology leadership and
-        industry knowledge sharing.
+        in automotive digital transformation, technology leadership
+        and industry knowledge sharing.
       </p>
+
 
       <div style="margin-top:40px">
 
-        <div class="evidence">
-          <div class="evidence-source">World Economic Forum</div>
-          <div class="evidence-desc">
-            Listed among acknowledged contributors to the Global Lighthouse Network
-            report representing SAIC Maxus.
-          </div>
-        </div>
+
+        <!-- WEF -->
 
         <div class="evidence">
-          <div class="evidence-source">Automotive CIO Summit</div>
-          <div class="evidence-desc">
-            Public presentations on C2B digital transformation,
-            large-scale personalization and digital manufacturing.
+
+          <div class="evidence-source">
+
+            World Economic Forum
+
+            <div class="evidence-meta">
+              Global Lighthouse Network · 2019
+            </div>
+
           </div>
+
+
+          <div class="evidence-desc">
+
+            Listed among acknowledged contributors to the
+            <strong>Global Lighthouse Network</strong> report as
+            <strong>XiaoLiang Li — Senior Product Manager, SAIC Maxus</strong>.
+
+            <div class="evidence-actions">
+
+              <a class="source-link"
+                 href="https://www3.weforum.org/docs/WEF_Global_Lighthouse_Network.pdf"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View original WEF report ↗
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="evidence">
-          <div class="evidence-source">CDIE</div>
-          <div class="evidence-desc">
-            Industry presentation covering microservices and smart manufacturing.
-          </div>
-        </div>
+
+        <!-- ACS -->
 
         <div class="evidence">
-          <div class="evidence-source">Rising Auto Digital Core</div>
-          <div class="evidence-desc">
-            Public industry coverage documents participation in the
-            cloud digital-core transformation and end-to-end enterprise integration.
+
+          <div class="evidence-source">
+
+            Automotive CIO Summit
+
+            <div class="evidence-meta">
+              ACS · 2021
+            </div>
+
           </div>
+
+
+          <div class="evidence-desc">
+
+            Presented
+            <strong>
+              “Large-scale Personalization Based on Digital Production Technologies”
+            </strong>
+            as Chief Engineer, Digital Technology & Transformation Center
+            at SAIC Maxus, covering C2B, digital platforms and intelligent manufacturing.
+
+            <div class="evidence-actions">
+
+              <a class="source-link"
+                 href="https://www.ctocio.com/conference/34667.html"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View conference record ↗
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
 
+
+        <!-- CDIE -->
+
         <div class="evidence">
-          <div class="evidence-source">Automotive Digitalization Forum</div>
-          <div class="evidence-desc">
-            Publicly identified as Director of Digital Products at Rising Auto
-            alongside automotive digital transformation leaders.
+
+          <div class="evidence-source">
+
+            CDIE
+
+            <div class="evidence-meta">
+              Digital Innovation Expo · 2020
+            </div>
+
           </div>
+
+
+          <div class="evidence-desc">
+
+            Presented
+            <strong>
+              “Microservices and Smart Manufacturing Practice in Manufacturing Enterprises”
+            </strong>
+            representing SAIC Maxus Digital Technology & Transformation.
+
+            <div class="evidence-actions">
+
+              <a class="source-link"
+                 href="https://www.cdie.cn/attachment/files/2020/10/15/CDIE%E4%BC%9A%E5%90%8E%E6%8A%A5%E5%91%8A.pdf"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View official conference report ↗
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
+
+
+        <!-- RISING AUTO -->
+
+        <div class="evidence">
+
+          <div class="evidence-source">
+
+            Rising Auto Digital Core
+
+            <div class="evidence-meta">
+              Cloud ERP Transformation · 2022–2023
+            </div>
+
+          </div>
+
+
+          <div class="evidence-desc">
+
+            Public industry coverage identifies me as
+            <strong>Digital Product Director at Rising Auto</strong>
+            and records my participation throughout the RISE with SAP implementation,
+            including cloud deployment and end-to-end enterprise integration.
+
+            <div class="evidence-actions">
+
+              <a class="source-link"
+                 href="https://cio.zhiding.cn/cio/2023/0328/3148407.shtml"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View role & implementation evidence ↗
+              </a>
+
+              <a class="source-link secondary"
+                 href="https://news.sap.cn/2023/03/%E9%A3%9E%E5%87%A1%E6%B1%BD%E8%BD%A6%E6%88%90%E5%8A%9F%E4%B8%8A%E7%BA%BFrise-with-sap/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                SAP official project record ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GOVERNMENT -->
+
+        <div class="evidence">
+
+          <div class="evidence-source">
+
+            Automotive Digitalization Forum
+
+            <div class="evidence-meta">
+              China Auto Digital Intellectualization Conference · 2023
+            </div>
+
+          </div>
+
+
+          <div class="evidence-desc">
+
+            Official English government coverage identifies
+            <strong>
+              Li Xiaoliang — Director of Digital Products of Rising Auto
+            </strong>
+            as a participant in the automotive digitalization “Super Dialogue”.
+
+            <div class="evidence-actions">
+
+              <a class="source-link"
+                 href="https://www.huadu.gov.cn/hdqzfywb/news/content/post_9064211.html"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View government English record ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
+
     </section>
 
 
-    <section id="insights">
-      <div class="section-label">Insights</div>
+    <!-- INSIGHTS -->
 
-      <h2>Enterprise AI, measured by outcomes.</h2>
+    <section id="insights">
+
+      <div class="section-label">
+        Insights
+      </div>
+
+      <h2>
+        Enterprise AI, measured by outcomes.
+      </h2>
+
 
       <div class="article">
 
-        <div class="article-date">September 2026</div>
+        <div class="article-date">
+          September 2026
+        </div>
 
         <h3>
           Measuring Enterprise AI Coding Productivity:
@@ -545,6 +877,7 @@
 
     </section>
 
+
   </main>
 
 
@@ -552,7 +885,9 @@
     © 2026 Johnny Xiaoliang Li / 李晓亮 · Shanghai
   </footer>
 
+
 </div>
 
 </body>
+
 </html>
