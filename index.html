@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Johnny Xiaoliang Li | Automotive Digital & AI Transformation</title>
+
+  <meta name="description"
+        content="Johnny Xiaoliang Li (李晓亮) — automotive digital and AI transformation executive with experience spanning enterprise IT, C2B digital transformation, cloud-native platforms and enterprise AI adoption.">
+
+  <meta name="author" content="Johnny Xiaoliang Li">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --text: #161616;
+      --muted: #666;
+      --line: #e9e9e9;
+      --soft: #f7f7f5;
+      --accent: #4f46e5;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background: white;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+    }
+
+    nav {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-weight: 650;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 110px 0 95px;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 650;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      margin: 0 0 24px;
+      font-weight: 680;
+    }
+
+    .cn-name {
+      font-size: 0.52em;
+      color: #777;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .hero-title {
+      font-size: clamp(22px, 3vw, 32px);
+      margin-bottom: 24px;
+      font-weight: 520;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 650;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      margin: 0 0 30px;
+    }
+
+    .intro {
+      max-width: 780px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .journey {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .journey-item {
+      padding: 28px;
+      min-height: 180px;
+      border-right: 1px solid var(--line);
+    }
+
+    .journey-item:last-child {
+      border-right: none;
+    }
+
+    .journey-num {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 36px;
+    }
+
+    .journey-title {
+      font-weight: 650;
+      margin-bottom: 8px;
+    }
+
+    .journey-text {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      min-height: 270px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #cfcfcf;
+      box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: var(--soft);
+      border-radius: 100px;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 38px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      gap: 30px;
+    }
+
+    .evidence-source {
+      font-weight: 650;
+    }
+
+    .evidence-desc {
+      color: var(--muted);
+    }
+
+    .article {
+      background: var(--soft);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .article-date {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .article h3 {
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+
+    .article p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .coming {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 22px;
+    }
+
+    footer {
+      padding: 55px 0 70px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      .journey,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .journey-item:last-child {
+        border-bottom: none;
+      }
+
+      .evidence {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Johnny Xiaoliang Li",
+    "alternateName": [
+      "李晓亮",
+      "Xiaoliang Li",
+      "Li Xiaoliang",
+      "XiaoLiang Li",
+      "Johnny Li"
+    ],
+    "jobTitle": "Automotive Digital & AI Transformation Executive",
+    "knowsAbout": [
+      "Enterprise AI",
+      "Digital Transformation",
+      "Automotive Digitalization",
+      "Digital Product",
+      "Enterprise IT",
+      "Cloud Transformation",
+      "AI Engineering Productivity"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <nav>
+    <div class="brand">Johnny Xiaoliang Li</div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#insights">Insights</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" style="border-top:0;">
+      <div class="eyebrow">Digital · Technology · Enterprise AI</div>
+
+      <h1>
+        Johnny Xiaoliang Li
+        <span class="cn-name">李晓亮</span>
+      </h1>
+
+      <div class="hero-title">
+        Automotive Digital & AI Transformation Executive
+      </div>
+
+      <div class="hero-desc">
+        Experience spanning enterprise IT, C2B digital transformation,
+        smart manufacturing, cloud-native digital platforms,
+        digital product leadership and enterprise AI adoption.
+      </div>
+    </section>
+
+
+    <section id="about">
+      <div class="section-label">About</div>
+
+      <h2>From enterprise IT to enterprise AI.</h2>
+
+      <p class="intro">
+        My career has followed the evolution of enterprise technology itself:
+        from core enterprise systems, to end-to-end digital transformation,
+        cloud-native digital businesses, and now the emerging AI-native enterprise.
+        My focus is not technology for its own sake, but how technology changes
+        products, operating models and business outcomes.
+      </p>
+
+      <div class="journey">
+
+        <div class="journey-item">
+          <div class="journey-num">01</div>
+          <div class="journey-title">Enterprise IT</div>
+          <div class="journey-text">
+            Enterprise systems, process integration and automotive IT foundations.
+          </div>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-num">02</div>
+          <div class="journey-title">Digital Transformation</div>
+          <div class="journey-text">
+            C2B transformation, digital customer experience and smart manufacturing.
+          </div>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-num">03</div>
+          <div class="journey-title">Cloud-native Enterprise</div>
+          <div class="journey-text">
+            0→1 digital platforms, cloud digital core and digital product leadership.
+          </div>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-num">04</div>
+          <div class="journey-title">Enterprise AI</div>
+          <div class="journey-text">
+            AI engineering productivity, enterprise agents and AI transformation.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="cases">
+      <div class="section-label">Selected Case Studies</div>
+
+      <h2>Transformation across technology generations.</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-tag">SAIC Maxus</div>
+          <h3>C2B Digital Transformation</h3>
+          <p>
+            Digital transformation across customer engagement,
+            intelligent configuration, data platforms and smart manufacturing.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Rising Auto</div>
+          <h3>0→1 Digital Enterprise</h3>
+          <p>
+            Building a cloud-based digital core and connecting business,
+            finance, supply chain and enterprise operations.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Enterprise AI</div>
+          <h3>AI as Enterprise Productivity</h3>
+          <p>
+            Exploring measurable AI adoption through engineering productivity,
+            quality, code contribution and enterprise agents.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="evidence">
+      <div class="section-label">Independent Public Evidence</div>
+
+      <h2>Professional claims should be verifiable.</h2>
+
+      <p class="intro">
+        Selected third-party public records documenting my participation
+        in automotive digital transformation, technology leadership and
+        industry knowledge sharing.
+      </p>
+
+      <div style="margin-top:40px">
+
+        <div class="evidence">
+          <div class="evidence-source">World Economic Forum</div>
+          <div class="evidence-desc">
+            Listed among acknowledged contributors to the Global Lighthouse Network
+            report representing SAIC Maxus.
+          </div>
+        </div>
+
+        <div class="evidence">
+          <div class="evidence-source">Automotive CIO Summit</div>
+          <div class="evidence-desc">
+            Public presentations on C2B digital transformation,
+            large-scale personalization and digital manufacturing.
+          </div>
+        </div>
+
+        <div class="evidence">
+          <div class="evidence-source">CDIE</div>
+          <div class="evidence-desc">
+            Industry presentation covering microservices and smart manufacturing.
+          </div>
+        </div>
+
+        <div class="evidence">
+          <div class="evidence-source">Rising Auto Digital Core</div>
+          <div class="evidence-desc">
+            Public industry coverage documents participation in the
+            cloud digital-core transformation and end-to-end enterprise integration.
+          </div>
+        </div>
+
+        <div class="evidence">
+          <div class="evidence-source">Automotive Digitalization Forum</div>
+          <div class="evidence-desc">
+            Publicly identified as Director of Digital Products at Rising Auto
+            alongside automotive digital transformation leaders.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="insights">
+      <div class="section-label">Insights</div>
+
+      <h2>Enterprise AI, measured by outcomes.</h2>
+
+      <div class="article">
+
+        <div class="article-date">September 2026</div>
+
+        <h3>
+          Measuring Enterprise AI Coding Productivity:
+          Beyond Adoption Rate
+        </h3>
+
+        <p>
+          AI adoption tells us whether people are using AI.
+          It does not tell us whether AI is improving engineering productivity.
+          A practical measurement framework should connect adoption,
+          acceptance, code contribution, delivery velocity and software quality.
+        </p>
+
+        <div class="coming">
+          Full article coming soon →
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 Johnny Xiaoliang Li / 李晓亮 · Shanghai
+  </footer>
+
+</div>
+
+</body>
+</html>
