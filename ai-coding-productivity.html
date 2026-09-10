@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Measuring Enterprise AI Coding Productivity: Beyond Adoption Rate | Johnny Xiaoliang Li</title>
+
+  <meta name="description"
+        content="Johnny Xiaoliang Li (李晓亮) shares a practical view of enterprise AI coding productivity: why adoption and acceptance rates are not enough, and why the real challenge is converting individual productivity into organizational value.">
+
+  <meta name="author" content="Johnny Xiaoliang Li">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+        href="https://johnnyxiaoliangli.github.io/ai-coding-productivity.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title"
+        content="Measuring Enterprise AI Coding Productivity: Beyond Adoption Rate">
+  <meta property="og:description"
+        content="The real challenge is not proving that AI makes people faster. It is proving what that speed changes in the organization.">
+  <meta property="og:image"
+        content="https://johnnyxiaoliangli.github.io/ai-coding-productivity.png">
+  <meta property="og:url"
+        content="https://johnnyxiaoliangli.github.io/ai-coding-productivity.html">
+
+  <style>
+
+    :root {
+      --text: #171717;
+      --muted: #656565;
+      --line: #e8e8e8;
+      --soft: #f7f7f5;
+      --accent: #4f46e5;
+      --max: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), 1080px);
+      margin: auto;
+    }
+
+    nav {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-weight: 650;
+      font-size: 15px;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-right a:hover {
+      color: var(--text);
+    }
+
+    .article-wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+    }
+
+    header {
+      padding: 85px 0 48px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 650;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 66px);
+      line-height: 1.06;
+      letter-spacing: -.045em;
+      margin: 0 0 24px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .meta {
+      margin-top: 28px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .language-switch {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .language-switch a {
+      border: 1px solid var(--line);
+      padding: 7px 13px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .language-switch a:hover {
+      border-color: #bbb;
+      color: var(--text);
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto 70px;
+      border: 1px solid #eee;
+    }
+
+    article {
+      font-size: 18px;
+    }
+
+    article p {
+      margin: 0 0 25px;
+    }
+
+    article h2 {
+      font-size: 31px;
+      line-height: 1.25;
+      letter-spacing: -.03em;
+      margin: 62px 0 22px;
+    }
+
+    blockquote {
+      margin: 38px 0;
+      padding: 5px 0 5px 25px;
+      border-left: 3px solid var(--accent);
+      font-size: 23px;
+      line-height: 1.5;
+      font-weight: 520;
+      letter-spacing: -.015em;
+    }
+
+    .question {
+      font-weight: 650;
+    }
+
+    .key-box {
+      background: var(--soft);
+      padding: 30px 34px;
+      border-radius: 16px;
+      margin: 42px 0;
+    }
+
+    .key-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .flow {
+      margin: 40px 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      font-weight: 600;
+      line-height: 2;
+    }
+
+    .arrow {
+      color: #aaa;
+      margin: 0 7px;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 90px 0;
+    }
+
+    .zh-title {
+      font-size: clamp(38px, 5vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin-bottom: 20px;
+    }
+
+    .about-author {
+      margin-top: 80px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fafafa;
+    }
+
+    .about-author h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .about-author p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .home-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    footer {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 70px auto 0;
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line);
+      color: #888;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding-top: 55px;
+      }
+
+      article {
+        font-size: 17px;
+      }
+
+      article h2 {
+        font-size: 27px;
+      }
+
+      blockquote {
+        font-size: 20px;
+      }
+
+      .nav-right {
+        gap: 12px;
+      }
+
+    }
+
+  </style>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Measuring Enterprise AI Coding Productivity: Beyond Adoption Rate",
+    "description": "Why individual AI productivity gains are much easier to demonstrate than enterprise productivity realization.",
+    "datePublished": "2026-09-10",
+    "dateModified": "2026-09-10",
+    "image": "https://johnnyxiaoliangli.github.io/ai-coding-productivity.png",
+    "author": {
+      "@type": "Person",
+      "name": "Johnny Xiaoliang Li",
+      "alternateName": [
+        "李晓亮",
+        "Xiaoliang Li",
+        "Li Xiaoliang",
+        "XiaoLiang Li"
+      ],
+      "url": "https://johnnyxiaoliangli.github.io/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://johnnyxiaoliangli.github.io/ai-coding-productivity.html"
+    },
+    "inLanguage": ["en", "zh-CN"]
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <nav>
+
+    <a class="brand" href="/">
+      Johnny Xiaoliang Li
+    </a>
+
+    <div class="nav-right">
+      <a href="#english">English</a>
+      <a href="#chinese">中文</a>
+      <a href="/">Home</a>
+    </div>
+
+  </nav>
+
+</div>
+
+
+<main>
+
+  <div class="article-wrap">
+
+    <header id="english">
+
+      <div class="eyebrow">
+        Enterprise AI · Engineering Productivity
+      </div>
+
+      <h1>
+        Measuring Enterprise AI Coding Productivity:
+        Beyond Adoption Rate
+      </h1>
+
+      <div class="subtitle">
+        The real challenge is not proving that AI makes people faster.
+        It is proving what that speed changes in the organization.
+      </div>
+
+      <div class="meta">
+        <span>Johnny Xiaoliang Li (李晓亮)</span>
+        <span>September 2026</span>
+      </div>
+
+      <div class="language-switch">
+        <a href="#english">English</a>
+        <a href="#chinese">中文版本 ↓</a>
+      </div>
+
+    </header>
+
+  </div>
+
+
+  <div class="container">
+
+    <img class="hero-image"
+         src="ai-coding-productivity.png"
+         alt="Enterprise AI coding productivity conversion from AI usage and acceptance to workflow change, team capacity and business value">
+
+  </div>
+
+
+  <article class="article-wrap">
+
+    <p>
+      When management asks, “How are we doing with AI?”, the question is usually
+      not really about usage.
+    </p>
+
+    <p>
+      At the beginning, people ask how many developers are using AI,
+      what the acceptance rate looks like, or how much code AI generates.
+      Those numbers are easy to get.
+    </p>
+
+    <p>
+      The difficult question comes immediately after:
+    </p>
+
+    <blockquote>
+      So what changed?
+    </blockquote>
+
+    <p>
+      If an engineer becomes 10% or 20% faster, what does that mean for the company?
+      Do projects finish earlier? Can the same team deliver more?
+      Can we reduce external resources? Can 50 people become 40?
+    </p>
+
+    <p>
+      This is where AI productivity becomes much harder than AI adoption.
+    </p>
+
+
+    <h2>A good-looking AI metric can still hide a weak result</h2>
+
+    <p>
+      I saw this clearly when looking at coding-assistant data.
+    </p>
+
+    <p>
+      The suggestion acceptance rate was around one-third.
+      My first reaction was: <strong>that is not bad.</strong>
+      Developers were clearly finding the tool useful.
+    </p>
+
+    <p>
+      But when we looked at how much AI-generated code actually entered
+      the measured code output, the number was only in the low single digits.
+    </p>
+
+    <p>
+      That was much less exciting.
+    </p>
+
+    <div class="key-box">
+
+      <p><strong>Both statements were true:</strong></p>
+
+      <p>The tool was useful.</p>
+
+      <p>But it had not yet changed the production model very much.</p>
+
+    </div>
+
+    <p>
+      That distinction matters.
+    </p>
+
+    <p>
+      A reasonable acceptance rate does not mean large organizational impact.
+      High usage does not mean high productivity.
+    </p>
+
+    <p>
+      The question I care about is:
+    </p>
+
+    <blockquote>
+      How much of that AI usage survives all the way to business value?
+    </blockquote>
+
+
+    <h2>Individual productivity is not organizational productivity</h2>
+
+    <p>
+      Suppose an engineer really saves 20% of coding time.
+    </p>
+
+    <p>
+      A business leader will naturally ask:
+    </p>
+
+    <blockquote>
+      If everyone is 20% faster, why don't we need 20% fewer people?
+    </blockquote>
+
+    <p>
+      Mathematically, the question sounds reasonable.
+      In a real organization, it is much more complicated.
+    </p>
+
+    <p>
+      Saved time does not automatically become removable headcount.
+      It may become more iterations, more requirements, more testing,
+      more support work, or simply more work being completed.
+    </p>
+
+    <p>
+      There is also a conversion cost.
+      People need time to learn how to work with AI.
+      Existing workflows need to change.
+      Legacy systems need context.
+      Responsibilities have to change before capacity can really be released.
+    </p>
+
+    <p>
+      So I now separate two ideas:
+    </p>
+
+    <div class="key-box">
+      <p><strong>Productivity gain</strong></p>
+      <p>and</p>
+      <p><strong>Productivity realization</strong></p>
+    </div>
+
+    <p>
+      AI may create the first one quickly.
+      The second one can take much longer.
+    </p>
+
+    <p>
+      This is also the difficult part to explain upward.
+      Management does not ultimately want an AI metric.
+      Management wants time, cost, capacity and eventually people.
+    </p>
+
+
+    <h2>I would measure the workflow, not just the AI tool</h2>
+
+    <p>
+      Most AI dashboards tell us what happened inside the AI tool.
+      I would go further.
+    </p>
+
+    <p>
+      I want to know whether software development itself has changed.
+    </p>
+
+    <p>
+      Has PR cycle time improved?
+      Has requirement-to-production time become shorter?
+      Can one engineer take a requirement further from start to finish?
+      Has rework decreased?
+      Has quality improved?
+    </p>
+
+    <p>
+      These questions matter more than counting generated code.
+    </p>
+
+    <p>
+      AI can make people <strong>busy faster</strong> without making the
+      organization <strong>productive faster</strong>.
+    </p>
+
+    <p>
+      A developer may modify the same feature five times in half the time.
+      The dashboard sees more commits and more activity.
+      But the business may receive no additional value.
+    </p>
+
+
+    <h2>One person completing a project is not the end of the story</h2>
+
+    <p>
+      AI can allow a strong engineer to do work that previously required several people.
+      That is real productivity.
+    </p>
+
+    <p>
+      But I would still ask one more question:
+    </p>
+
+    <blockquote>
+      Who maintains it afterwards?
+    </blockquote>
+
+    <p>
+      If only one person really understands the project,
+      the company may have gained delivery speed but created a new dependency.
+    </p>
+
+    <p>
+      When someone else takes over, that person may need to spend significant time
+      reconstructing the context, understanding the code, or asking AI to rebuild
+      the reasoning again.
+    </p>
+
+    <p>
+      Sometimes we save time during creation and pay it back during maintenance.
+    </p>
+
+    <p>
+      So local productivity can improve while organizational maintainability gets worse.
+    </p>
+
+
+    <h2>I don't believe headcount reduction can be extrapolated linearly</h2>
+
+    <p>
+      There is a popular idea that AI will allow a very small team to replace
+      a much larger one.
+    </p>
+
+    <p>
+      For some work, yes.
+      But if 50 people become 10, those 10 people are not simply doing more coding.
+    </p>
+
+    <p>
+      They need broader business knowledge, stronger engineering judgment,
+      more ownership and much more self-management.
+    </p>
+
+    <p>
+      And then there is another question:
+    </p>
+
+    <blockquote>
+      If someone can really do the work of several people with AI,
+      why would that person remain easy to retain in a traditional organization?
+    </blockquote>
+
+    <p>
+      AI increases productivity.
+      But it may also increase the market value and independence of the most capable people.
+    </p>
+
+    <p>
+      So “fewer people” is not only a technology question.
+      It is also an organizational and talent question.
+    </p>
+
+
+    <h2>What I actually want to measure</h2>
+
+    <div class="flow">
+      AI Usage
+      <span class="arrow">→</span>
+      Workflow Change
+      <span class="arrow">→</span>
+      Engineering Outcome
+      <span class="arrow">→</span>
+      Enterprise Realization
+    </div>
+
+    <p>
+      The common mistake is jumping from the first box directly to the last one.
+    </p>
+
+    <p>
+      High AI usage does not automatically mean fewer people.
+      Faster coding does not automatically mean faster delivery.
+      More code does not automatically mean more value.
+      Individual productivity does not automatically become organizational productivity.
+    </p>
+
+    <p>
+      That conversion is the real work.
+    </p>
+
+
+    <h2>The question I care about now</h2>
+
+    <p>
+      I am less interested in asking:
+    </p>
+
+    <blockquote>
+      How much AI-generated code do we have?
+    </blockquote>
+
+    <p>
+      I am more interested in asking:
+    </p>
+
+    <blockquote>
+      Where did the productivity gain go?
+    </blockquote>
+
+    <p>
+      Did it reduce cycle time?
+      Did it release capacity?
+      Did it reduce dependency?
+      Did it improve quality?
+      Did it change how the team works?
+    </p>
+
+    <p>
+      And eventually, did the organization get something measurable back?
+    </p>
+
+    <p>
+      For me, that is the difference between
+      <strong>using AI</strong> and <strong>transforming with AI</strong>.
+    </p>
+
+
+    <hr class="divider">
+
+
+    <!-- CHINESE VERSION -->
+
+    <section id="chinese" lang="zh-CN">
+
+      <div class="eyebrow">
+        中文版本
+      </div>
+
+      <h2 class="zh-title">
+        企业AI研发效能：为什么“大家都在用”还远远不够
+      </h2>
+
+      <p>
+        管理层问“AI用得怎么样”的时候，真正想问的其实通常不是：
+        有多少人在用、采纳率是多少、生成了多少代码。
+      </p>
+
+      <p>
+        这些数字并不难拿。
+      </p>
+
+      <p>
+        真正难的是下一句：
+      </p>
+
+      <blockquote>
+        然后呢？组织到底发生了什么变化？
+      </blockquote>
+
+      <p>
+        如果一个研发人员因为AI快了10%、20%，甚至更多，
+        那么公司最后得到了什么？
+      </p>
+
+      <p>
+        项目是不是更早上线了？
+        同样的人是不是可以做更多事情？
+        外包是不是可以少一点？
+        50个人是不是可以变成40个人？
+      </p>
+
+      <p>
+        到这里，AI提效就不再是一个工具使用率的问题了。
+      </p>
+
+
+      <h2>一个看起来不错的数字，可能同时藏着一个不太好看的结果</h2>
+
+      <p>
+        我自己看研发AI数据的时候，就遇到过这种情况。
+      </p>
+
+      <p>
+        按次计算的AI建议采纳率大约在三成左右。
+        我第一反应其实是：这个数字还可以。
+      </p>
+
+      <p>
+        说明开发人员不是为了完成任务去打开AI，
+        而是真的觉得有一些建议可以用。
+      </p>
+
+      <p>
+        但再往下看，真正进入整体代码产出的AI代码比例却只有很低的个位数。
+      </p>
+
+      <p>
+        那我的感觉就完全不一样了。
+      </p>
+
+      <div class="key-box">
+        <p><strong>两个结论可以同时成立：</strong></p>
+        <p>工具是有用的。</p>
+        <p>但它还远远没有改变研发的生产方式。</p>
+      </div>
+
+      <p>
+        所以我现在看到一个很高的AI使用率，或者一个看起来不错的采纳率，
+        第一反应已经不会是“AI提效成功了”。
+      </p>
+
+      <p>
+        我会继续问：
+      </p>
+
+      <blockquote>
+        这些AI使用，最后有多少真的转化成了组织价值？
+      </blockquote>
+
+
+      <h2>个人快了，不等于组织就可以同比例少人</h2>
+
+      <p>
+        假设一个研发人员真的因为AI节省了20%的编码时间。
+      </p>
+
+      <p>
+        老板一定会继续问：
+      </p>
+
+      <blockquote>
+        如果每个人都快20%，为什么人数不能少20%？
+      </blockquote>
+
+      <p>
+        这个问题从数学上没有问题。
+        但是放进一个真实组织里面，就不是这么简单。
+      </p>
+
+      <p>
+        省出来的时间可能变成更多需求、更多迭代、更多测试、
+        更多支持工作，也可能只是把以前来不及做的事情做掉。
+      </p>
+
+      <p>
+        中间还有一个转化周期。
+      </p>
+
+      <p>
+        人要学习怎么真正把AI用好；
+        原来的研发流程要变化；
+        老系统需要重新建立上下文；
+        团队的职责和分工也要跟着调整。
+      </p>
+
+      <p>
+        所以我现在会把两件事情分开：
+      </p>
+
+      <div class="key-box">
+        <p><strong>提效发生了没有？</strong></p>
+        <p>和</p>
+        <p><strong>提效兑现了没有？</strong></p>
+      </div>
+
+      <p>
+        AI可能很快就让个人变快。
+      </p>
+
+      <p>
+        但要真正变成公司的时间、产能、成本，甚至人力变化，
+        中间还有很长一段路。
+      </p>
+
+
+      <h2>如果今天重新搭这套体系，我更想看研发过程到底有没有变化</h2>
+
+      <p>
+        现在很多AI看板，本质上还是在看AI工具自己产生的数据。
+      </p>
+
+      <p>
+        使用率、采纳率、生成代码量，这些当然要看。
+      </p>
+
+      <p>
+        但我更想知道：
+      </p>
+
+      <p>
+        PR提交是不是变快了？
+        一个需求从开始到上线是不是缩短了？
+        一个人是不是可以承担更完整的端到端工作？
+        重复修改是不是少了？
+        质量是不是更好了？
+      </p>
+
+      <p>
+        因为还有另外一种可能：
+      </p>
+
+      <p>
+        AI让一个人每一次修改都非常快，
+        但是同样一个东西反复改了五遍。
+      </p>
+
+      <p>
+        看板会告诉你：
+        Commit多了，代码多了，动作更多了。
+      </p>
+
+      <p>
+        但业务价值未必增加。
+      </p>
+
+      <blockquote>
+        AI可以让人“忙得更快”，但不一定让组织“产出得更快”。
+      </blockquote>
+
+
+      <h2>一个人把项目做出来，也不是故事的结束</h2>
+
+      <p>
+        AI现在确实可能让一个能力比较强的人，
+        独立完成以前需要几个人协同才能做出来的项目。
+      </p>
+
+      <p>
+        这当然是真实的效率提升。
+      </p>
+
+      <p>
+        但我还是会继续问一句：
+      </p>
+
+      <blockquote>
+        然后谁来维护？
+      </blockquote>
+
+      <p>
+        如果最后只有这个人真正理解整个系统，
+        那公司在交付阶段省下来的时间，
+        可能在后面的维护、交接和知识重建阶段重新付出去。
+      </p>
+
+      <p>
+        别的人接手以后，要重新熟悉代码、重新理解上下文，
+        有时候甚至还要重新花大量Token让AI把原来的逻辑再解释一遍。
+      </p>
+
+      <p>
+        所以我越来越关注一个问题：
+      </p>
+
+      <blockquote>
+        局部效率提高以后，组织的可维护性是不是反而下降了？
+      </blockquote>
+
+
+      <h2>我也不相信“50个人直接变10个人”这种线性推导</h2>
+
+      <p>
+        AI当然会减少一部分工作的用人量，这件事情我并不怀疑。
+      </p>
+
+      <p>
+        但如果50个人真的变成10个人，
+        那剩下的10个人绝对不是简单地“多写五倍代码”。
+      </p>
+
+      <p>
+        他们需要更懂业务、更懂技术、更有判断力，
+        能管更大的范围，也要有更强的自我驱动力。
+      </p>
+
+      <p>
+        然后又会出现另外一个问题：
+      </p>
+
+      <blockquote>
+        如果一个人真的可以借助AI承担原来几个人的价值，
+        这种人为什么还会那么容易留在传统企业里面？
+      </blockquote>
+
+      <p>
+        AI放大的是个人生产力。
+      </p>
+
+      <p>
+        但它同时也可能放大优秀人才的市场价值和独立性。
+      </p>
+
+      <p>
+        所以最后“少多少人”，并不是一个简单的AI技术问题，
+        它还是组织模式和人才问题。
+      </p>
+
+
+      <h2>我现在真正想看的，是这条转化链</h2>
+
+      <div class="flow">
+        AI使用
+        <span class="arrow">→</span>
+        工作方式变化
+        <span class="arrow">→</span>
+        研发结果变化
+        <span class="arrow">→</span>
+        企业价值兑现
+      </div>
+
+      <p>
+        最大的问题，是很多公司从第一格直接跳到了最后一格。
+      </p>
+
+      <p>
+        使用率很高，不等于人可以马上减少。
+      </p>
+
+      <p>
+        编码变快，不等于项目一定更快。
+      </p>
+
+      <p>
+        代码更多，不等于价值更多。
+      </p>
+
+      <p>
+        个人效率提高，也不会自动变成组织效率提高。
+      </p>
+
+      <p>
+        真正困难的，就是中间这段转化。
+      </p>
+
+
+      <h2>所以我现在最关心的问题变了</h2>
+
+      <p>
+        我已经不太关心单纯问：
+      </p>
+
+      <blockquote>
+        AI写了多少代码？
+      </blockquote>
+
+      <p>
+        我更想问：
+      </p>
+
+      <blockquote>
+        提升出来的效率，最后到底去了哪里？
+      </blockquote>
+
+      <p>
+        它有没有变成更短的周期？
+      </p>
+
+      <p>
+        有没有释放真正的产能？
+      </p>
+
+      <p>
+        有没有减少重复劳动和人员依赖？
+      </p>
+
+      <p>
+        有没有提高质量？
+      </p>
+
+      <p>
+        有没有真正改变团队的工作方式？
+      </p>
+
+      <p>
+        最后，公司有没有得到可以算得出来的东西？
+      </p>
+
+      <p>
+        对我来说，这就是
+        <strong>“用了AI”</strong>
+        和
+        <strong>“被AI改变了”</strong>
+        之间的区别。
+      </p>
+
+    </section>
+
+
+    <div class="about-author">
+
+      <h3>
+        About Johnny Xiaoliang Li / 关于李晓亮
+      </h3>
+
+      <p>
+        Johnny Xiaoliang Li (李晓亮) is an automotive digital and technology
+        transformation executive with experience spanning enterprise IT,
+        C2B digital transformation, smart manufacturing, cloud-native digital
+        platforms, digital product leadership and enterprise AI adoption.
+      </p>
+
+      <p>
+        His current areas of interest include enterprise AI transformation,
+        engineering productivity, enterprise agents and how AI capability
+        is converted into measurable organizational value.
+      </p>
+
+      <p>
+        李晓亮长期从事汽车行业数字化和技术转型工作，经历从企业IT、
+        C2B数字化转型、智能制造、云化数字平台到企业AI应用的发展过程。
+        当前重点关注企业AI转型、研发AI提效、智能体以及AI能力如何真正转化为组织价值。
+      </p>
+
+      <a class="home-link" href="/">
+        View professional profile & public evidence →
+      </a>
+
+    </div>
+
+  </article>
+
+</main>
+
+
+<footer>
+  © 2026 Johnny Xiaoliang Li / 李晓亮
+</footer>
+
+</body>
+
+</html>
